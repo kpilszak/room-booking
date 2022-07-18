@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   pageRequested = 1;
 
   @Output()
-  pageChangedEvent = new EventEmitter();
+  pageChangedEvent = new EventEmitter<number>();
 
   constructor() { }
 
@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
 
   onPageChange(page: number): void {
     this.pageRequested = page;
+    this.pageChangedEvent.emit(page);
   }
 
 }

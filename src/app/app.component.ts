@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
 
   startTime: string = '';
 
+  currentPage = 1;
+
   ngOnInit(): void {
     this.startTime = new Date().toString();
   }
@@ -26,8 +28,12 @@ export class AppComponent implements OnInit {
     this.footerComponent.lastAccessed = new Date().toString();
   }
 
-  incrementHitsCounter(): void {
-
+  incrementHitCounter(page: number): void {
+    this.currentPage = page;
+    if (page === 2) {
+      this.page2Component.incrementHitCounter()
+    }
   }
+
 
 }

@@ -14,7 +14,7 @@ export class Page2Component implements OnInit {
   ngOnInit(): void {
   }
 
-  incrementHitsCounter(): void {
+  incrementHitCounter(): void {
     this.hits++;
   }
 
