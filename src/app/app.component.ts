@@ -1,39 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {FooterComponent} from "./footer/footer.component";
-import {Page2Component} from "./page2/page2.component";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'RoomBookingApp';
-
-  @ViewChild('footer', {static: true})
-  footerComponent: FooterComponent = new FooterComponent();
-
-  @ViewChild('page2', {static: true})
-  page2Component: Page2Component = new Page2Component();
-
-  startTime: string = '';
-
-  currentPage = 1;
-
-  ngOnInit(): void {
-    this.startTime = new Date().toString();
-  }
-
-  updateLastAccessed(): void {
-    this.footerComponent.lastAccessed = new Date().toString();
-  }
-
-  incrementHitCounter(page: number): void {
-    this.currentPage = page;
-    if (page === 2) {
-      this.page2Component.incrementHitCounter()
-    }
-  }
-
+export class AppComponent {
 
 }
